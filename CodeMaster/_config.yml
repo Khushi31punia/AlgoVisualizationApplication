@@ -1,3 +1,50 @@
-touch _config.yml
+# Site Settings
+title: My Jekyll Site
+description: A short description of your site
+url: https://www.example.com  # Your site's URL (used for absolute URLs)
+
+# Build Settings
+source: .  # The directory where your site's content is stored (typically root)
+destination: ./_site  # The output directory for the generated site
+
+# Exclude Directories or Files
 exclude:
   - node_modules
+  - .git
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-github-metadata
+
+# Theme
+theme: jekyll-theme-primer
+
+# Markdown Processor
+markdown: kramdown
+
+# Permalink Structure
+permalink: /:year/:month/:day/:title/
+
+# Archive settings (Pagination)
+paginate: 5  # Number of posts per page
+paginate_path: "/blog/page:num/"
+
+# Custom Collections (if any)
+collections:
+  my_collection:
+    output: true
+    permalink: /:collection/:name/
+
+# Front Matter Defaults (for page/posts)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+      categories: []
+
